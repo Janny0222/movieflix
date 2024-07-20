@@ -2,11 +2,14 @@ import React from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { MoviesData } from '../../Data/MovieData';
 import { register } from 'swiper/element/bundle';
+import FlexMovieItem from '../FlexMovieItem';
+import { Link } from 'react-router-dom';
+import { FaHeart } from 'react-icons/fa';
 register();
 const Banner = () => {
-    
+    const [isHovered, setIsHovered] = React.useState(false);
   return (
-    <div className='relative w-full'>
+    <div className='relative w-full pt-1'>
         <Swiper
             direction='horizontal'
             spaceBetween={0}
@@ -25,7 +28,26 @@ const Banner = () => {
                     alt={movie.name} 
                     className='w-full h-full object-cover' />
                     <div className='absolute linear-bg xl:pl-52 sm:pl-32 pl-8 top-0 bottom-0 right-0 left-0 flex flex-col justify-center lg:gap-8 md:gap-5 gap-4'>
-                        <h1 className='xl:text-4xl truncate capitalize font-sans sm:text-2xl text-xl font-bold'>{movie.name}</h1>
+                        <h1 className='xl:text-4xl truncate capitalize font-sans sm:text-2xl text-xl font-bold'>
+                            {movie.name}
+                        </h1>
+                        <div className='flex gap-5 items-center text-dryGray'>
+                            <FlexMovieItem movie={movie} />
+                        </div>
+                        <div className='flex gap-2 items-center'>
+                            <Link to={`/movie/${movie.name}`} className='bg-subMain hover:text-main transitions text-white px-8 py-3 rounded font-medium sm:text-sm text-xs'>
+                            Watch Now
+                            </Link>
+                            <button className={`hover:text-subMain transitions bg-dryGray py-3.5 px-5 rounded text-md bg-opacity-30 relative`}
+                            onMouseEnter = {() => setIsHovered(true)} 
+                            onMouseLeave = {() => setIsHovered(false)}
+                            >
+                                <FaHeart className='z-50'/>
+                            </button>
+                            <span className= {`${isHovered ? ' bg-none text-dryGray text-xs ' : 'hidden'}   `} >
+                                Add to favorites
+                            </span>
+                        </div>
                     </div>
                 </SwiperSlide>
             ))
