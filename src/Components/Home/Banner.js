@@ -38,11 +38,11 @@ const Banner = () => {
                             <Link to={`/movie/${movie.name}`} className='bg-subMain hover:text-main transitions text-white px-8 py-3 rounded font-medium sm:text-sm text-xs'>
                             Watch Now
                             </Link>
-                            <button className={`hover:text-subMain transitions bg-dryGray py-3.5 px-5 rounded text-md bg-opacity-30 relative`}
+                            <button className={`hover:text-subMain transitions bg-dryGray/20 py-2.5 px-5 rounded text-md bg-opacity-30 relative`}
                             onMouseEnter = {() => setIsHovered(true)} 
                             onMouseLeave = {() => setIsHovered(false)}
                             >
-                                <FaHeart className='z-50'/>
+                                <FaHeart className='z-50 w-6 h-6'/>
                             </button>
                             <span className= {`${isHovered ? ' bg-none text-dryGray text-xs ' : 'hidden'}   `} >
                                 Add to favorites
