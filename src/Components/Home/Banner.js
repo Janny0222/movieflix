@@ -9,7 +9,7 @@ register();
 const Banner = () => {
     const [isHovered, setIsHovered] = React.useState(false);
   return (
-    <div className='relative w-full pt-1'>
+    <div className='relative w-full pt-1 mb-6'>
         <Swiper
             direction='horizontal'
             spaceBetween={0}
@@ -21,7 +21,7 @@ const Banner = () => {
             className='w-full xl:h-[400px] bg-dry lg:h-72 h-56'
         >
         {
-            MoviesData.slice(0, 11).map((movie, index) => (
+            MoviesData.slice(0, 13).map((movie, index) => (
                 <SwiperSlide 
                     key={index} 
                     className='relative rounded overflow-hidden'
