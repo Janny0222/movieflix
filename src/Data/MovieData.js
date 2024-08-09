@@ -78,7 +78,7 @@ export const MoviesData = [
         rate: 4.5,
     },
     {
-        name: 'Avengers: Endgame',
+        name: 'Avengers Endgame',
         desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, voluptatibus.',
         titleImage: '77.jpg',
         image: '7.jpg',
@@ -206,5 +206,6 @@ export const UserData = [
         rate: 1.5,
         message: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, voluptatibus.',
     },
+    
 
 ]

@@ -11,7 +11,7 @@ const NavBar = () => {
         <div className='container mx-auto py-6 px-2 lg:grid gap-4 grid-cols-7 justify-between items-center'>
             <div className='col-span-1 lg:block hidden'>
                 <Link to="/">
-                    <img src="logo3.png" alt='logo' className='w-full h-10 object-contain' />
+                    <img src="/logo3.png" alt='logo' className='w-full h-10 object-contain' />
                 </Link>
             </div>
             {/* Search form movie */}

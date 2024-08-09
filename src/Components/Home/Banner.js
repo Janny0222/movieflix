@@ -1,13 +1,14 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { MoviesData } from '../../Data/MovieData';
 import { register } from 'swiper/element/bundle';
 import FlexMovieItem from '../FlexMovieItem';
 import { Link } from 'react-router-dom';
 import { FaHeart } from 'react-icons/fa';
+import { MovieContext } from '../Context/MovieContext';
 register();
 const Banner = () => {
     const [isHovered, setIsHovered] = React.useState(false);
+    const { MoviesData } = useContext(MovieContext);
   return (
     <div className='relative w-full pt-1 mb-6'>
         <Swiper
