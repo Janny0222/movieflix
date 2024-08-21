@@ -7,6 +7,8 @@ import NotFound from './Screens/NotFound'
 import Movies from './Screens/Movies'
 import SingleMovie from './Screens/SingleMovie'
 import MovieProvider from './Components/Context/MovieContext'
+import WatchPage from './Screens/WatchPage'
+import Login from './Screens/Login'
 
 
 const App = () => {
@@ -20,7 +22,10 @@ const App = () => {
 
           <Route path='/movies' element={<Movies />} />
           
+          <Route path='/login' element={<Login />} />
+
           <Route path='/movie/:id' element={<SingleMovie />} />
+          <Route path='/watch/:id' element={<WatchPage />} />
           <Route path='*' element={<NotFound />} />
         </Routes>
       </MovieProvider>
