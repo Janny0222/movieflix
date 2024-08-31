@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext } from 'react'
 import Layout from '../Layout/Layout'
 import Filters from '../Components/Filters'
 // import { MoviesData } from '../Data/MovieData'

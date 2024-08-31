@@ -1,12 +1,6 @@
 import React, { useState, Fragment } from "react";
 import { CategoriesData } from "../Data/CategoriesData";
-import {
-  Listbox,
-  ListboxButton,
-  ListboxOption,
-  ListboxOptions,
-  Transition,
-} from "@headlessui/react";
+import { Listbox, Transition } from "@headlessui/react";
 import { FaAngleDown, FaCheck } from "react-icons/fa";
 
 const YearData = [
@@ -67,21 +61,21 @@ const Filters = () => {
       {Filter.map((item, index) => (
         <Listbox key={index} value={item.value} onChange={item.onchange}>
           <div className="relative">
-            <ListboxButton className="relative border border-gray-800 w-full text-white bg-main rounded-lg cursor-default py-4 pl-6 pr-10 text-left text-xs">
+            <Listbox.Button className="relative border border-gray-800 w-full text-white bg-main rounded-lg cursor-default py-4 pl-6 pr-10 text-left text-xs">
               <span className="block truncate">{item.value.title}</span>
               <span className="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
                 <FaAngleDown className="w-5 h-5 " aria-hidden="true" />
               </span>
-            </ListboxButton>
+            </Listbox.Button>
             <Transition
               as={Fragment}
               leave="transition ease-in duration-100"
               leaveFrom="opacity-100"
               leaveTo="opacity-0"
             >
-              <ListboxOptions className="absolute z-10 mt-1 w-full bg-white border border-gray-800 text-dryGray rounded-md shadow-lg-black ring-opacity-5 overflow-auto focus:outline-none sm:text-sm">
+              <Listbox.Options className="absolute z-10 mt-1 w-full bg-white border border-gray-800 text-dryGray rounded-md shadow-lg-black ring-opacity-5 overflow-auto focus:outline-none sm:text-sm">
                 {item.items.map((list, i) => (
-                  <ListboxOption
+                  <Listbox.Option
                     key={i}
                     className={({ focus }) =>
                       `relative cursor-default select-none py-2 pl-10 pr-4 ${focus ? "bg-subMain text-white" : "text-main"}`
@@ -102,9 +96,9 @@ const Filters = () => {
                         ) : null}
                       </>
                     )}
-                  </ListboxOption>
+                  </Listbox.Option>
                 ))}
-              </ListboxOptions>
+              </Listbox.Options>
             </Transition>
           </div>
         </Listbox>
